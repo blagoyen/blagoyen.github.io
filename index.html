@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+          margin: 0;
+                  overflow: hidden;
+        }
+        html, body {
+          height: 100%;
+        }
+        canvas {
+          display: block;
+        }
+        .logo{position:blocked;bottom:16px;right:16px;width:32px;height:32px;z-index:2;background-image:url(https://app.spline.design/_assets/_icons/icon_favicon32x32.png);background-size:cover;}.logo:hover{opacity:0.8;}
+      </style>
     <link rel="icon" href="favicon.ico">
     <title>Blagoje Nikolic</title>
     <link rel="stylesheet" href="css/style.css">
@@ -11,60 +24,45 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
 <body>
 
-    <div class="top-cont">
-        
-        <div class="headInfo">
-            <h1 class="iamHead">I'm Blagoje</h1>
-        </div>
-            <h2 class="paraInfo">a <span style="text-decoration: underline;">pro</span>grammer.</h2>
-            <a style="color: #FFD24C" href="https://ignorok.blagoje.me/">Ignorok Project</a>
-
-
-<!--
+    <!-- NAVIGATION BAR -->
+    <div class="navbar-div">
+        <nav class="sticky-top navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand navbar-textcolor navbar-title" href="">blagoje</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
+              aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" style="padding-left: 10px; font-weight: 700;" id="mainMenu">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link navbar-textcolor" href="">contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link navbar-textcolor" href="">projects</a>
+                </li>
+              </ul>
+            </div>
+            <i class="fa-solid fa-moon darkModebtn" style="font-size: 30px; padding-right: 1rem;" onclick=""></i>
+          </nav>
     </div>
-    <div class="middle-container">
-        <div class="profile">
-          <img src="images/mypfp.jpg" alt="">
-          <h2>Hello.</h2>
-          <p>Lorem ipsum dolor sit amet, vitae volutpat, dui conubia, dolor urna. Non auctor, montes nulla distinctio.</p>
-        </div>
-        <hr style="margin-top:150px;margin-bottom: 50px;height:2px;border-width:0;color:gray;background-color:gray">
-        <div class="skills">
-          <h2 >My Skills.</h2>
-          <div class="skill-row first-skill">
-            <img class="computer-image" src="images/cloud-network.gif" alt="">
-            <div class="skill-description-one">
-                <h3>Certified Amazon Solutions Architect - Associate (SAA)</h3>
-                <p>I'm certified Amazon Solutions Architect <a href="pdf/awscert.pdf">(certification).</a></p>
-            </div>
-          </div>
-          <div class="skill-row second-skill">
-            <img class="chill-image" src="images/warning.gif" alt="">
-            <div class="skill-description-one">
-                <h3>Programming Skills</h3>
-                <p>JavaScript, HTML, CSS, Python, Java, BAT, etc.</p>
-            </div>
-          </div>
-        </div>
-        <hr style="margin-top:150px;margin-bottom: 50px;height:2px;border-width:0;color:gray;background-color:gray">
 
-        <div class="contact-me">
-          <h2>Soon</h2>
-          <h3>Lorem ipsum dolor sit amet, non elit.</h3>
-          <p>Lorem ipsum dolor sit amet, in quis, aenean amet. Phasellus sodales, tellus donec dui, ornare erat.</p>
-          <a class="btn" href="mailto:blagojenikolic006@gmail.com">CONTACT ME</a>
-        </div>
-      </div>
-      
-      
-      <div class="bottom-container">
-        <a class="footer-link" href="https://www.linkedin.com/">LinkedIn</a>
-        <a class="footer-link" href="https://twitter.com/">Twitter</a>
-        <a class="footer-link" href="https://www.appbrewery.co/">Website</a>
-        <p>© Blagoje Nikolic.</p>
-      </div> -->
+    <!-- SPLINE SCENE -->
+    <canvas id="canvas3d"></canvas>
+    <a class="logo" href="https://spline.design"></a>
+    <script type="module">
+      import { Application } from './runtime.js';
+      const canvas = document.getElementById('canvas3d');
+      const app = new Application(canvas);
+      app.load('./scene.splinecode');
+    </script>
 </body>
 </html>
